@@ -41,11 +41,11 @@
         </div>
     </header>
 
-    <main>
+    <main class="main">
         <section class="secton hero">
             <div class="container hero-padding">
                 <h1 class="hero_h1">Effective Solutions <br> for Your Business</h1>
-                <button type="button" class="order-service-but">
+                <button type="button" class="order-service-but" data-modal-open>
                     <span class="order-service-txt">
                         Order Service
                     </span>
@@ -375,6 +375,14 @@
             </div>
         </div>
     </footer>
+    <div class="overlay is-hidden" data-modal>
+        <div class="modal">
+            <button class="close" data-modal-close><svg>
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg></button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
