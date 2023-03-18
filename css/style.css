@@ -92,7 +92,7 @@ body {
   color: var(--pressed-state-color);
   transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
 }
 
 .logo-blue {
@@ -719,14 +719,14 @@ img {
   background-color: var(--pressed-state-color);
   transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
   fill: var(--white-background-color);
 }
 
 .close:hover svg {
   transition-property: fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
   fill: var(--white-background-color);
 }
 
