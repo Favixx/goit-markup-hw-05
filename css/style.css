@@ -17,11 +17,6 @@ li {
   padding: 0;
 }
 
-*:hover,
-*:focus {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
-}
 
 :root {
   --primary-brand-color: #4d5ae5;
@@ -87,13 +82,15 @@ body {
 .contact-info>li a:hover,
 .contact-info>li a:active {
   color: var(--pressed-state-color);
+  transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
 }
 
-.contact-info>li a:focus-within,
-.site-navigation>li a:focus-within {
+.contact-info>li a:focus,
+.site-navigation>li a:focus {
   color: var(--pressed-state-color);
+  transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms;
 }
@@ -179,9 +176,10 @@ body {
 
 .order-service-but:hover,
 .order-service-but:focus {
-  background: var(--pressed-state-color);
+  background-color: var(--pressed-state-color);
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
 }
 
 .order-service-txt {
@@ -317,8 +315,7 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   background-color: var(--pressed-state-color);
   color: var(--white-background-color);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-li:first-child>button {
@@ -352,8 +349,9 @@ img {
 
 .portfolio-item a:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
 }
 
 .portfolio-item a {
@@ -512,12 +510,13 @@ img {
 .social_media_lnk li a:focus {
   background-color: var(--pressed-state-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
+  transition-property: background-color;
 }
 
 .social_media_lnk li svg {
-  max-width: 16px;
-  max-height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .social_media_lnk li a {
@@ -525,8 +524,8 @@ img {
 }
 
 .icon-bg svg {
-  max-width: 64px;
-  max-height: 64px;
+  width: 64px;
+  height: 64px;
   display: block;
   justify-content: center;
   align-items: center;
@@ -564,8 +563,9 @@ img {
 }
 
 .customers_list li svg {
-  max-width: 104px;
-  max-height: 56px;
+  width: 104px;
+  height: 56px;
+  fill: var(--secondary-text-color);
 }
 
 .customers_list li a {
@@ -576,15 +576,19 @@ img {
   border-radius: 4px;
   width: 168px;
   height: 88px;
-  fill: var(--secondary-text-color);
 }
 
 .customers_list li a:hover,
 .customers_list li a:focus {
-  border: 1px solid var(--pressed-state-color);
-  fill: var(--pressed-state-color);
+  border-color: var(--pressed-state-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
+  transition-property: border-color;
+}
+
+.customers_list li a:hover svg {
+  fill: var(--pressed-state-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers_list li {
@@ -619,24 +623,22 @@ img {
   justify-content: center;
   align-items: center;
   background-color: #FFFFFF1A;
-  max-width: 40px;
-  min-width: 40px;
-  max-height: 40px;
-  min-height: 40px;
-  padding: 4px;
+  width: 40px;
+  height: 40px;
   border-radius: 9999px;
 }
 
 .dark_social_media_lnk li a:hover,
 .dark_social_media_lnk li a:focus {
   background-color: var(--success-color);
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-duration: 250ms;
 }
 
 .dark_social_media_lnk li svg {
-  max-width: 24px;
-  max-height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .visually-hidden {
@@ -646,6 +648,7 @@ img {
   margin: -1px;
   border: 0;
   padding: 0;
+  opacity: 0;
 
   white-space: nowrap;
   clip-path: inset(100%);
@@ -662,17 +665,25 @@ img {
   top: 0;
   left: 0;
   pointer-events: all;
-  transition: 250ms ease-in-out;
-  transform: scale(1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
   visibility: visible;
+}
+
+.overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.is-hidden .modal {
+  transform: scale(0.7) translate(-50%, -50%);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   background-color: var(--modal-background-color);
   width: 408px;
   height: 576px;
@@ -692,28 +703,36 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--accent-color);
-  fill: var(--dark-color);
 }
 
 
 .close svg {
+  fill: var(--dark-color);
   display: block;
   margin: auto;
-  max-width: 8px;
-  max-height: 8px;
+  width: 8px;
+  height: 8px;
 }
 
 .close:hover,
 .close:focus {
   background-color: var(--pressed-state-color);
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms;
+  fill: var(--white-background-color);
+}
+
+.close:hover svg {
+  transition-property: fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms;
   fill: var(--white-background-color);
 }
 
 .is-hidden {
-  transform: scale(0);
   opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
   visibility: hidden;
 }
@@ -750,12 +769,16 @@ img {
   padding-right: 32px;
 
   transform: translateY(0);
-  transition: 0.25s;
+  transition-duration: 0.25s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item>a:hover .portfolio_overlay div {
   transform: translateY(-100%);
-  transition: 0.25s;
+  transition-duration: 0.25s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay-txt {
