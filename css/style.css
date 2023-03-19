@@ -82,17 +82,13 @@ body {
 .contact-info>li a:hover,
 .contact-info>li a:active {
   color: var(--pressed-state-color);
-  transition-property: color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info>li a:focus,
 .site-navigation>li a:focus {
   color: var(--pressed-state-color);
-  transition-property: color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-blue {
@@ -177,9 +173,7 @@ body {
 .order-service-but:hover,
 .order-service-but:focus {
   background-color: var(--pressed-state-color);
-  transition-property: background-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service-txt {
@@ -349,9 +343,7 @@ img {
 
 .portfolio-item a:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item a {
@@ -509,9 +501,7 @@ img {
 .social_media_lnk li a:hover,
 .social_media_lnk li a:focus {
   background-color: var(--pressed-state-color);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
-  transition-property: background-color;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social_media_lnk li svg {
@@ -581,12 +571,11 @@ img {
 .customers_list li a:hover,
 .customers_list li a:focus {
   border-color: var(--pressed-state-color);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
-  transition-property: border-color;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers_list li a:hover svg {
+.customers_list li a:hover svg,
+.customers_list li a:focus svg {
   fill: var(--pressed-state-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -631,9 +620,7 @@ img {
 .dark_social_media_lnk li a:hover,
 .dark_social_media_lnk li a:focus {
   background-color: var(--success-color);
-  transition-property: background-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark_social_media_lnk li svg {
@@ -721,24 +708,13 @@ img {
 .close:hover,
 .close:focus {
   background-color: var(--pressed-state-color);
-  transition-property: background-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close:hover svg {
-  transition-property: fill;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: var(--white-background-color);
 }
-
-/* .is-hidden {
-  opacity: 0;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  visibility: hidden;
-} */
 
 .line::after {
   content: "";
@@ -770,18 +746,13 @@ img {
   padding-left: 32px;
   padding-top: 40px;
   padding-right: 32px;
-
   transform: translateY(0);
-  transition-duration: 0.25s;
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item>a:hover .portfolio_overlay div {
   transform: translateY(-100%);
-  transition-duration: 0.25s;
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay-txt {
